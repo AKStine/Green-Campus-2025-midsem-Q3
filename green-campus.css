@@ -1,24 +1,24 @@
-/* 
-  Green Campus 2025 Theme
-  Background image: https://unsplash.com/photos/green-leafed-trees-4dpAqfTbvKA
-  Photo by: veeterzy on Unsplash (Unsplash License)
+/*
+  Green Campus 2025 Theme (USIU–Africa Branding)
+  Background image: https://unsplash.com/photos/green-trees-during-daytime-IGfIGP5ONV0
+  Photo by Jan Huber on Unsplash (Unsplash License)
 */
 
 /* 1. Reset & Base Styles */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-  color: #184d27;
-  background: #eafbe7;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  color: #003366; /* USIU–Africa blue */
+  background: #f8f9fa;
 }
 
 /* 2. Hero Section */
 .hero {
   min-height: 100vh;
-  background: 
-    linear-gradient(rgba(34, 139, 34, 0.5), rgba(34, 139, 34, 0.6)),
-    url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  background:
+    linear-gradient(rgba(0, 51, 102, 0.55), rgba(111, 220, 111, 0.45)), /* USIU blue + green overlay */
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,20 +28,34 @@ body {
 }
 .hero-title {
   font-size: 3rem;
-  color: #fff;
+  color: #ffd100; /* USIU–Africa gold */
   margin-bottom: 1rem;
   opacity: 0;
   animation: fadeIn 2s 0.5s forwards;
   letter-spacing: 2px;
-  text-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  text-shadow: 0 4px 16px #00336699;
 }
 .hero-subtitle {
   font-size: 1.4rem;
-  color: #eafbe7;
+  color: #fff;
   margin-bottom: 2.5rem;
   opacity: 0;
   animation: fadeIn 2s 1.5s forwards;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  text-shadow: 0 2px 8px #00336644;
+}
+.hero-credit {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  background: #fffbe3;
+  color: #003366;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  padding: 0.2rem 0.8rem;
+}
+.hero-credit a {
+  color: #003366;
+  text-decoration: underline;
 }
 
 /* 3. Custom CSS Animation: Fade In */
@@ -59,15 +73,15 @@ body {
 /* 4. Custom Button */
 .join-btn {
   display: inline-block;
-  background: linear-gradient(90deg, #6fdc6f 0%, #348a34 100%);
-  color: #fff;
+  background: linear-gradient(90deg, #ffd100 0%, #00529b 100%);
+  color: #003366;
   font-size: 1.25rem;
   font-weight: bold;
   padding: 0.9rem 2.5rem;
   border-radius: 32px;
   cursor: pointer;
-  border: none;
-  box-shadow: 0 2px 12px rgba(34,139,34,0.15);
+  border: 2px solid #003366;
+  box-shadow: 0 2px 12px #00336622;
   transition: background 0.2s, transform 0.15s, color 0.2s;
   outline: none;
   margin-bottom: 1rem;
@@ -76,13 +90,13 @@ body {
 }
 .join-btn:hover,
 .join-btn:focus {
-  background: linear-gradient(90deg, #348a34 0%, #6fdc6f 100%);
-  color: #184d27;
+  background: linear-gradient(90deg, #00529b 0%, #ffd100 100%);
+  color: #fff;
   transform: scale(1.05);
 }
 .join-btn:active {
-  background: #184d27;
-  color: #fff;
+  background: #003366;
+  color: #ffd100;
 }
 
 /* 5. Campaign Info Section */
@@ -91,19 +105,23 @@ body {
   margin: 2rem auto 3rem auto;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(34,139,34,0.06);
+  box-shadow: 0 2px 12px #0033660a;
   padding: 2rem 1.5rem;
   text-align: center;
 }
 .campaign-info h2 {
-  color: #348a34;
+  color: #00529b;
   margin-top: 0;
 }
 .campaign-info ul {
-  list-style: disc inside;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1rem 0;
   text-align: left;
-  margin: 1rem auto 1rem 2rem;
-  color: #184d27;
+}
+.campaign-info li {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
 }
 .campaign-info p {
   font-weight: 500;
@@ -117,7 +135,7 @@ body {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
-  background: rgba(34,139,34,0.85);
+  background: rgba(0,51,102,0.92); /* USIU blue overlay */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,29 +146,125 @@ body {
 }
 .modal-content {
   background: #fff;
-  color: #184d27;
-  padding: 2rem 2.5rem;
-  border-radius: 18px;
-  max-width: 400px;
-  box-shadow: 0 4px 32px rgba(34,139,34,0.25);
-  text-align: left;
+  color: #003366;
+  padding: 0;
+  border-radius: 20px;
+  max-width: 420px;
+  min-width: 300px;
+  box-shadow: 0 4px 32px #00336644;
+  overflow: hidden;
+}
+.modal-header {
+  background: linear-gradient(90deg, #ffd100 0%, #00529b 100%);
+  color: #003366;
+  padding: 1.2rem 2rem 1.2rem 1.2rem;
+  display: flex;
+  align-items: center;
   position: relative;
+}
+.leaf-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem;
+  display: inline-block;
+  background: linear-gradient(135deg, #9be7a3 40%, #348a34 100%);
+  border-radius: 0 100% 100% 100% / 0 100% 100% 100%;
+  box-shadow: 0 0 0 2px #fff, 0 2px 8px #348a34a0;
+  transform: rotate(-25deg);
+}
+.modal-header h2 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 .close-btn {
   position: absolute;
-  top: 1rem; right: 1rem;
+  top: 0.7rem; right: 1.1rem;
   font-size: 2rem;
-  color: #348a34;
+  color: #003366;
   background: none;
   border: none;
   cursor: pointer;
   font-weight: bold;
   line-height: 1;
   transition: color 0.2s;
+  z-index: 2;
 }
 .close-btn:hover,
 .close-btn:focus {
-  color: #184d27;
+  color: #ffd100;
+}
+.modal-body {
+  padding: 1.5rem 2rem 2rem 2rem;
+}
+.modal-body p {
+  margin-top: 0;
+}
+.modal-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.2rem 0;
+}
+.modal-checklist li {
+  font-size: 1.13rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+}
+
+/* Pledge Form */
+.pledge-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 1.2rem 0 0.8rem 0;
+}
+.pledge-form label {
+  font-weight: 500;
+  color: #00529b;
+}
+.pledge-form input[type="text"] {
+  padding: 0.5rem;
+  border-radius: 7px;
+  border: 1px solid #ffd100;
+  font-size: 1rem;
+}
+.pledge-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+.pledge-checkbox {
+  accent-color: #00529b;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.4em;
+}
+.thank-you-msg {
+  display: none;
+  color: #348a34;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
+  text-align: center;
+}
+.pledge-checkbox:checked ~ .thank-you-msg {
+  display: inline-block;
+  animation: fadeIn 1s;
+}
+
+/* Modal Contact */
+.modal-contact {
+  margin-top: 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.modal-contact a {
+  color: #00529b;
+  text-decoration: underline;
 }
 
 /* Show modal when checkbox is checked */
@@ -161,8 +275,8 @@ body {
 
 /* 7. Footer */
 footer {
-  background: #184d27;
-  color: #eafbe7;
+  background: #003366;
+  color: #ffd100;
   text-align: center;
   padding: 1rem 0;
   font-size: 1rem;
@@ -174,20 +288,19 @@ footer {
 @media (max-width: 700px) {
   .hero-title { font-size: 2.1rem; }
   .campaign-info { padding: 1.2rem 0.5rem; }
-  .modal-content { padding: 1.2rem 0.7rem; }
+  .modal-content { min-width: 90vw; padding: 0; }
+  .modal-header, .modal-body { padding-left: 1rem; padding-right: 1rem; }
 }
 @media (max-width: 500px) {
   .hero-title { font-size: 1.4rem; }
   .hero-subtitle { font-size: 1rem; }
 }
 
-/* 
-  Reflection: 
-  - The green color palette, leafy background, and natural gradients reflect sustainability and eco-friendliness.
-  - Animations are lightweight (CSS only, no JS/images) to reduce bandwidth.
-  - Modal uses a CSS-only hack (checkbox) for accessibility and performance.
-  - To test for low-bandwidth: 
-    1. Use optimized, compressed images (Unsplash link has been optimized).
-    2. Test with browser dev tools set to "Slow 3G" or similar.
-    3. Ensure all animations and modal work with no JS and minimal CSS.
+/*
+  Reflection:
+  - USIU–Africa branding is used throughout: blue (#003366), gold (#ffd100), and clean Roboto font.
+  - Green overlays and gradients blend the sustainability theme with university identity.
+  - All UI (modal, button, animation) is pure CSS—no JS, no image assets except the background.
+  - For low-bandwidth: image is optimized, CSS is lightweight, and the modal works with no scripts.
+  - To test: Use browser dev tools to simulate slow connections and ensure all features load and work smoothly.
 */

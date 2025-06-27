@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Green Campus 2025 | USIU–Africa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="green-campus.css">
+</head>
+<body>
+  <!-- 
+    Text fades in with custom animation.
+  -->
+  <header class="hero">
+    <h1 class="hero-title">Green Campus 2025</h1>
+    <p class="hero-subtitle">Join us in making USIU–Africa sustainable, green, and future-ready.</p>
+    <!-- Custom button triggers modal via a label/checkbox hack -->
+    <label for="modal-toggle" class="join-btn" tabindex="0">Join the Campaign</label>
+  </header>
+
+  <main>
+    <section class="campaign-info">
+      <h2>Why Go Green?</h2>
+      <ul>
+        <li>Reduce campus waste and energy use</li>
+        <li>Promote tree planting and biodiversity</li>
+        <li>Encourage water conservation</li>
+        <li>Support eco-friendly transport</li>
+      </ul>
+      <p>
+        Every student action counts! Click "Join the Campaign" to learn how you can help.
+      </p>
+    </section>
+  </main>
+
+  <!-- Modal Trigger (checkbox hack) -->
+  <input type="checkbox" id="modal-toggle" class="modal-toggle" hidden>
+  <!-- CSS-only modal -->
+  <section class="modal" aria-modal="true" role="dialog">
+    <div class="modal-content">
+      <label for="modal-toggle" class="close-btn" aria-label="Close Modal">&times;</label>
+      <h2>About Green Campus 2025</h2>
+      <p>
+        Green Campus 2025 is USIU–Africa’s commitment to sustainability. 
+        Our goal: carbon-neutral campus by 2025! 
+        <br><br>
+        <strong>How you can participate:</strong>
+      </p>
+      <ul>
+        <li>Join campus clean-up days</li>
+        <li>Use refillable bottles and reduce plastic</li>
+        <li>Cycle or walk to class</li>
+        <li>Take part in tree planting events</li>
+      </ul>
+      <p>
+        Questions? Email <a href="mailto:sustainability@usiu.ac.ke">sustainability@usiu.ac.ke</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 USIU–Africa | “Green Campus 2025”</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* 
+  Green Campus 2025 Theme
+  Background image: https://unsplash.com/photos/green-leafed-trees-4dpAqfTbvKA
+  Photo by: veeterzy on Unsplash (Unsplash License)
+*/
+
+/* 1. Reset & Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  color: #184d27;
+  background: #eafbe7;
+}
+
+/* 2. Hero Section */
+.hero {
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(34, 139, 34, 0.5), rgba(34, 139, 34, 0.6)),
+    url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.hero-title {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeIn 2s 0.5s forwards;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.hero-subtitle {
+  font-size: 1.4rem;
+  color: #eafbe7;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeIn 2s 1.5s forwards;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* 3. Custom CSS Animation: Fade In */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+/* 4. Custom Button */
+.join-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #6fdc6f 0%, #348a34 100%);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.9rem 2.5rem;
+  border-radius: 32px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 12px rgba(34,139,34,0.15);
+  transition: background 0.2s, transform 0.15s, color 0.2s;
+  outline: none;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeIn 2s 2.5s forwards;
+}
+.join-btn:hover,
+.join-btn:focus {
+  background: linear-gradient(90deg, #348a34 0%, #6fdc6f 100%);
+  color: #184d27;
+  transform: scale(1.05);
+}
+.join-btn:active {
+  background: #184d27;
+  color: #fff;
+}
+
+/* 5. Campaign Info Section */
+.campaign-info {
+  max-width: 600px;
+  margin: 2rem auto 3rem auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(34,139,34,0.06);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.campaign-info h2 {
+  color: #348a34;
+  margin-top: 0;
+}
+.campaign-info ul {
+  list-style: disc inside;
+  text-align: left;
+  margin: 1rem auto 1rem 2rem;
+  color: #184d27;
+}
+.campaign-info p {
+  font-weight: 500;
+}
+
+/* 6. Modal Styles (CSS-only popup) */
+.modal-toggle {
+  display: none;
+}
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(34,139,34,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  color: #184d27;
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  max-width: 400px;
+  box-shadow: 0 4px 32px rgba(34,139,34,0.25);
+  text-align: left;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-size: 2rem;
+  color: #348a34;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.close-btn:hover,
+.close-btn:focus {
+  color: #184d27;
+}
+
+/* Show modal when checkbox is checked */
+.modal-toggle:checked + .modal {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 7. Footer */
+footer {
+  background: #184d27;
+  color: #eafbe7;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  margin-top: 3rem;
+  letter-spacing: 1px;
+}
+
+/* 8. Responsive Design */
+@media (max-width: 700px) {
+  .hero-title { font-size: 2.1rem; }
+  .campaign-info { padding: 1.2rem 0.5rem; }
+  .modal-content { padding: 1.2rem 0.7rem; }
+}
+@media (max-width: 500px) {
+  .hero-title { font-size: 1.4rem; }
+  .hero-subtitle { font-size: 1rem; }
+}
+
+/* 
+  Reflection: 
+  - The green color palette, leafy background, and natural gradients reflect sustainability and eco-friendliness.
+  - Animations are lightweight (CSS only, no JS/images) to reduce bandwidth.
+  - Modal uses a CSS-only hack (checkbox) for accessibility and performance.
+  - To test for low-bandwidth: 
+    1. Use optimized, compressed images (Unsplash link has been optimized).
+    2. Test with browser dev tools set to "Slow 3G" or similar.
+    3. Ensure all animations and modal work with no JS and minimal CSS.
+*/

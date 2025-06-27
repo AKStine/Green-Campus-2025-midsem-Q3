@@ -13,6 +13,23 @@ body {
   background: #f8f9fa;
 }
 
+/* Accessibility: Skip Link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #ffd100;
+  color: #003366;
+  padding: 0.5rem 1rem;
+  z-index: 10000;
+  border-radius: 0 0 8px 8px;
+  font-weight: bold;
+  transition: left 0.2s;
+}
+.skip-link:focus {
+  left: 0;
+}
+
 /* 2. Hero Section */
 .hero {
   min-height: 100vh;
@@ -298,7 +315,7 @@ footer {
 
 /*
   Reflection:
-  - USIU–Africa branding is used throughout: blue (#003366), gold (#ffd100), and clean Roboto font.
+  - USIU–Africa branding is used throughout: blue (#003366), gold (#ffd100), and Roboto font.
   - Green overlays and gradients blend the sustainability theme with university identity.
   - All UI (modal, button, animation) is pure CSS—no JS, no image assets except the background.
   - For low-bandwidth: image is optimized, CSS is lightweight, and the modal works with no scripts.

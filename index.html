@@ -4,61 +4,77 @@
   <meta charset="UTF-8">
   <title>Green Campus 2025 | USIU–Africa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Link to CSS file -->
+  <!-- Roboto font for USIU–Africa branding -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="green-campus.css">
 </head>
 <body>
-  <!-- 
-    Text fades in with custom animation.
-  -->
-  <header class="hero">
+  <!-- Accessibility: Skip link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="hero" role="banner">
     <h1 class="hero-title">Green Campus 2025</h1>
-    <p class="hero-subtitle">Join us in making USIU–Africa sustainable, green, and future-ready.</p>
-    <!-- Custom button triggers modal via a label/checkbox hack -->
-    <label for="modal-toggle" class="join-btn" tabindex="0">Join the Campaign</label>
+    <p class="hero-subtitle">Let’s make USIU–Africa a model of sustainability!</p>
+    <!-- Accessible button using label/checkbox hack -->
+    <label for="modal-toggle" class="join-btn" tabindex="0">🌱 Join the Campaign</label>
+    <div class="hero-credit">
+      Photo: <a href="https://unsplash.com/photos/green-trees-during-daytime-IGfIGP5ONV0" target="_blank" rel="noopener">Jan Huber / Unsplash</a>
+    </div>
   </header>
 
-  <main>
-    <section class="campaign-info">
-      <h2>Why Go Green?</h2>
+  <main id="main-content">
+    <section class="campaign-info" aria-labelledby="why-green">
+      <h2 id="why-green">Why Go Green?</h2>
       <ul>
-        <li>Reduce campus waste and energy use</li>
-        <li>Promote tree planting and biodiversity</li>
-        <li>Encourage water conservation</li>
-        <li>Support eco-friendly transport</li>
+        <li>🌳 Plant trees & boost campus biodiversity</li>
+        <li>♻️ Reduce waste and recycle more</li>
+        <li>🚲 Walk, bike, or use eco-friendly transport</li>
+        <li>💧 Conserve water and energy</li>
       </ul>
       <p>
-        Every student action counts! Click "Join the Campaign" to learn how you can help.
+        Every action counts! Click "Join the Campaign" to take the pledge and see how you can help.
       </p>
     </section>
   </main>
 
   <!-- Modal Trigger (checkbox hack) -->
-  <input type="checkbox" id="modal-toggle" class="modal-toggle" hidden>
-  <!-- CSS-only modal -->
-  <section class="modal" aria-modal="true" role="dialog">
+  <input type="checkbox" id="modal-toggle" class="modal-toggle" hidden aria-hidden="true">
+  <!-- CSS-only modal with ARIA for accessibility -->
+  <section class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-heading">
     <div class="modal-content">
-      <label for="modal-toggle" class="close-btn" aria-label="Close Modal">&times;</label>
-      <h2>About Green Campus 2025</h2>
-      <p>
-        Green Campus 2025 is USIU–Africa’s commitment to sustainability. 
-        Our goal: carbon-neutral campus by 2025! 
-        <br><br>
-        <strong>How you can participate:</strong>
-      </p>
-      <ul>
-        <li>Join campus clean-up days</li>
-        <li>Use refillable bottles and reduce plastic</li>
-        <li>Cycle or walk to class</li>
-        <li>Take part in tree planting events</li>
-      </ul>
-      <p>
-        Questions? Email <a href="mailto:sustainability@usiu.ac.ke">sustainability@usiu.ac.ke</a>
-      </p>
+      <div class="modal-header">
+        <span class="leaf-icon" aria-hidden="true"></span>
+        <h2 id="modal-heading">Join Green Campus 2025!</h2>
+        <label for="modal-toggle" class="close-btn" aria-label="Close Modal">&times;</label>
+      </div>
+      <div class="modal-body">
+        <p>
+          Be a sustainability champion at USIU–Africa! Here’s how you can make a difference:
+        </p>
+        <ul class="modal-checklist">
+          <li>🌱 Take part in tree planting</li>
+          <li>🚯 Keep our campus litter-free</li>
+          <li>💡 Switch off lights when not in use</li>
+          <li>🚴‍♂️ Use green transport</li>
+          <li>📢 Spread the word!</li>
+        </ul>
+        <form class="pledge-form" aria-label="Sustainability Pledge Form">
+          <label for="pledge-name">Your Name:</label>
+          <input type="text" id="pledge-name" name="pledge-name" placeholder="e.g. Amina" required>
+          <label class="pledge-checkbox-label">
+            <input type="checkbox" id="pledge-check" class="pledge-checkbox">
+            I pledge to support a greener campus!
+          </label>
+          <span class="thank-you-msg">🌟 Thank you for pledging! 🌟</span>
+        </form>
+        <p class="modal-contact">
+          Questions? Email <a href="mailto:sustainability@usiu.ac.ke">sustainability@usiu.ac.ke</a>
+        </p>
+      </div>
     </div>
   </section>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 USIU–Africa | “Green Campus 2025”</p>
   </footer>
 </body>
